@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Three.js + cannon-es Demo</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #overlay {
+      position: absolute; top: 0; left: 0;
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; background:rgba(0,0,0,0.5);
+      cursor:pointer; font-family:sans-serif;
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.module.js",
+      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.156.1/examples/jsm/",
+      "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="overlay">クリックで視点ロック</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
