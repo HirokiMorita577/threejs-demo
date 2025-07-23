@@ -98,6 +98,8 @@ export function loadStage1(scene, physicsWorld, meshBodyMap, renderer, playerBod
 
   addModel(scene, './assets/models/optimus.glb', { x: 0, y: 0, z: -15 }, { x: 0.25, y: 0.25, z: 0.25 },{ x: 0, y: Math.PI / 3, z: 0 },{ autoRotateY: 1.5 });
   addModel(scene, './assets/models/optimus.glb', { x: 0, y: 0, z: -45 }, { x: 2, y: 2, z: 2 },{ x: 0, y: 0 , z: 0 });
+  addModel(scene, './assets/models/optimus.glb', { x: 0, y: 0, z: -75 }, { x: 2, y: 2, z: 2 },{ x: 0, y: 0 , z: 0 });
+  for (let i = 0; i < 50; i += 5) {
   for (let i = 0; i < 50; i += 5) {
     addModel(scene, './assets/models/takio.glb',
       { x: 2.5, y: 0.65, z: 2.5 - i },
@@ -268,4 +270,5 @@ export function loadStage1(scene, physicsWorld, meshBodyMap, renderer, playerBod
     physicsWorld.addBody(sphereBody);
 
     meshBodyMap.set(sphereMesh, sphereBody);
+}
 }

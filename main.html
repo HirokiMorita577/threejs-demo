@@ -5,21 +5,47 @@
   <title>Three.js + cannon-es Demo</title>
   <link rel="stylesheet" href="style/main.css" />
   <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
-    #overlay {
-      position: absolute; top: 0; left: 0;
-      width:100%; height:100%;
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; background:rgba(0,0,0,0.5);
-      cursor:pointer; font-family:sans-serif;
-      z-index: 1;
-    }
-    nav#main-nav {
-    position: absolute;
-    top: 0; left: 0;
-    z-index: 10; /* ← オーバーレイより上にする */
-  }
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: transparent;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* overlay（視点ロック） */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* nav（パンくずリスト） */
+nav#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background: rgba(68, 68, 68, 0.9);
+}
+
   </style>
   <script type="importmap">
   {
@@ -33,13 +59,13 @@
 </head>
 <body>
   <nav id="main-nav">
-  <ul>
-    <li><a href="/">トップ</a></li>
-    <li><a href="/about.html">このサイトについて</a></li>
-    <li><a href="/models.html">モデル一覧</a></li>
-    <li><a href="/stage1.html">3D空間に入る</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+      <li><a href="/models.html">モデル一覧</a></li>
+      <li><a href="/stage1.html">3D空間に入る</a></li>
+    </ul>
+  </nav>
   <div id="overlay">クリックで視点ロック</div>
   <script type="module" src="./js/main.js"></script>
   <script src="js/nav.js" defer></script>
