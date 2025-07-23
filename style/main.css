@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+header {
+  background: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  background: #555;
+}
+nav ul li {
+  margin: 0 1em;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+}
+main {
+  padding: 2em;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.col {
+  width: 45%;
+  background: white;
+  padding: 1em;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  text-align: left;
+}
+.chat-container {
+  max-width: 600px;
+  margin: 2em auto;
+  background: #f4f4f4;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.message {
+  margin: 1em 0;
+  display: flex;
+}
+.message.bot {
+  justify-content: flex-start;
+}
+.message.user {
+  justify-content: flex-end;
+}
+.bubble {
+  max-width: 70%;
+  padding: 0.8em;
+  border-radius: 10px;
+  font-size: 1em;
+  line-height: 1.4;
+}
+.bot .bubble {
+  background: #e0f7fa;
+  border-top-left-radius: 0;
+}
+.user .bubble {
+  background: #c8e6c9;
+  border-top-right-radius: 0;
+}
+.options {
+  max-width: 600px;
+  margin: 1em auto;
+  text-align: center;
+}
+.options button {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+}
+.options button:hover {
+  background-color: #004d40;
+}
+/* 選択肢をユーザー吹き出しの中に */
+.bubble button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 0.3em 0.8em;
+  margin: 0.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+.bubble button:hover {
+  background-color: #004d40;
+}
+/* ▼ canvasが後ろに回るように設定 */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* ▼ nav（パンくずリスト）を前面にして、クリックできるようにする */
+nav, nav * {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  background-color: rgba(85, 85, 85, 0.9); /* 背景調整（任意） */
+  color: white;
+  padding: 0.5em;
+}
+#main-nav {
+  background: #444;
+}
+
+#main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #555;
+}
+
+#main-nav ul li {
+  margin: 0 2em;
+}
+
+#main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+}
+

@@ -2,30 +2,48 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Three.js + cannon-es Demo</title>
-  <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
-    #overlay {
-      position: absolute; top: 0; left: 0;
-      width:100%; height:100%;
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; background:rgba(0,0,0,0.5);
-      cursor:pointer; font-family:sans-serif;
-    }
-  </style>
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.module.js",
-      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.156.1/examples/jsm/",
-      "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
-    }
-  }
-  </script>
+  <title>3Dモデル紹介サイト</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <script src="js/nav.js" defer></script>
 </head>
 <body>
-  <div id="overlay">クリックで視点ロック</div>
-  <script type="module" src="./main.js"></script>
+  <header>
+    <h1>3Dモデル紹介サイト</h1>
+    <nav id="main-nav"></nav> <!-- JSでナビを挿入 -->
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>このサイトについて</h2>
+      <p>ここでは3D空間で使用されるモデルやエフェクトの情報を掲載しています。</p>
+    </section>
+
+    <section class="features">
+      <h2>特徴</h2>
+      <div class="row">
+        <div class="col">
+          <h3>インタラクティブ</h3>
+          <p>WASDキーで移動、マウスで視点操作が可能。</p>
+        </div>
+        <div class="col">
+          <h3>物理演算</h3>
+          <p>Cannon-esによるリアルな動作を実現。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>基本情報</h2>
+      <table>
+        <tr><th>エンジン</th><td>Three.js + cannon-es</td></tr>
+        <tr><th>対応デバイス</th><td>PCブラウザ</td></tr>
+        <tr><th>操作</th><td>WASDキー / マウス視点</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 3Dサイト制作課題</p>
+  </footer>
 </body>
 </html>

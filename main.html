@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Three.js + cannon-es Demo</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #overlay {
+      position: absolute; top: 0; left: 0;
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; background:rgba(0,0,0,0.5);
+      cursor:pointer; font-family:sans-serif;
+      z-index: 1;
+    }
+    nav#main-nav {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 10; /* ← オーバーレイより上にする */
+  }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.module.js",
+      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.156.1/examples/jsm/",
+      "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav id="main-nav">
+  <ul>
+    <li><a href="/">トップ</a></li>
+    <li><a href="/about.html">このサイトについて</a></li>
+    <li><a href="/models.html">モデル一覧</a></li>
+    <li><a href="/stage1.html">3D空間に入る</a></li>
+  </ul>
+</nav>
+  <div id="overlay">クリックで視点ロック</div>
+  <script type="module" src="./js/main.js"></script>
+  <script src="js/nav.js" defer></script>
+</body>
+</html>
